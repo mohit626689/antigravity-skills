@@ -1,0 +1,72 @@
+{
+  "channel": {
+    "name": "Apex Curiosity Pro",
+    "handle": "@ApexCuriosityPro",
+    "niche": "Tech & AI Breakthroughs",
+    "inspiration_url": "https://www.youtube.com/@ColdFusion",
+    "target_audience": "Tech enthusiasts, founders, and curious minds",
+    "visual_style": "Dark Cinematic 8K, Photorealistic Hyper-detail, Neon Cyan and Amber Accents, Volumetric Fog",
+    "tone": "Authoritative, engaging, cinematic, intellectually gripping"
+  },
+  "providers": {
+    "voice": {
+      "provider": "elevenlabs",
+      "model": "eleven_multilingual_v2",
+      "voice_id": "21m00Tcm4TlvDq8ikWAM",
+      "stability": 0.5,
+      "similarity_boost": 0.8,
+      "fallback_provider": "edge_tts",
+      "fallback_voice": "en-US-ChristopherNeural"
+    },
+    "video_motion": {
+      "provider": "higgsfield",
+      "motion_intensity": 6,
+      "camera_motion": "dolly_in",
+      "fps": 30,
+      "resolution": "1080p",
+      "fallback_provider": "ken_burns_ffmpeg"
+    },
+    "image_generation": {
+      "provider": "flux_pro",
+      "model": "fal-ai/flux-pro/v1.1",
+      "aspect_ratio_landscape": "16:9",
+      "aspect_ratio_shorts": "9:16",
+      "guidance_scale": 3.5,
+      "num_inference_steps": 30,
+      "fallback_provider": "imagefx"
+    },
+    "music": {
+      "provider": "suno_ai",
+      "genre": "cinematic_ambient_electronic",
+      "tempo": "mid-tempo",
+      "instrumental": true,
+      "fallback_provider": "royalty_free_procedural"
+    },
+    "subtitles": {
+      "style": "kinetic_hormozi",
+      "font_family": "Montserrat Black",
+      "primary_color": "&H00FFFFFF",
+      "highlight_color": "&H0000FFFF",
+      "outline_color": "&H00000000",
+      "outline_width": 3,
+      "font_size": 28,
+      "all_caps": true,
+      "animation": "pop_bounce"
+    }
+  },
+  "seo": {
+    "vidiq_target_score": 98,
+    "hook_formula": "High-CTR Question Hook with Emotional Stakes",
+    "include_timestamps": true,
+    "playlists": {
+      "landscape": "Full Deep-Dive Masterclasses",
+      "shorts": "Viral 60s Tech Insights"
+    }
+  },
+  "schedule": {
+    "slot_1": "08:00",
+    "slot_2": "17:00",
+    "days_ahead": 100,
+    "timezone": "Asia/Kolkata"
+  }
+}

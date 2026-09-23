@@ -8,6 +8,7 @@ A curated suite of autonomous agent skills built for **Google Antigravity**, **C
 
 | Skill | Description | Directory |
 | :--- | :--- | :--- |
+| **`youtube-automation-pro`** | ⚡ **Studio Edition YouTube Automation OS** — Hollywood-grade production engine powered by ElevenLabs (hyper-realistic voice & SFX), Higgsfield AI (cinematic camera motion), FLUX.1 Pro (8K photorealistic visuals & thumbnails), Suno AI v3.5 (custom background scores), kinetic Hormozi subtitles, and vidIQ 98 SEO. | [`youtube-automation-pro/`](youtube-automation-pro/) |
 | **`youtube-automation`** | 🎬 **Universal YouTube Video Automation Operating System** — Interactive onboarding wizard (`setup.py`) for ANY niche, 400+ neural voices, dynamic zero-overlap video compositor, vidIQ 96+ SEO metadata, and 100-day autonomous cloud scheduling (8 AM & 5 PM daily). | [`youtube-automation/`](youtube-automation/) |
 | **`youtube-kids-automation`** | 🧸 **Preschool & Toddler Animation Operating System** — 26 fixed 3D Pixar-clay character IPs, authentic child neural voiceover (`en-US-AnaNeural`), synchronized cartoon SFX, and COPPA compliant automated publishing. | [`youtube-kids-automation/`](youtube-kids-automation/) |
 | **`agent-skills`** | 🛠️ **Agent Skills Specialist** — Standardized authoring, validation, and optimization of Agent Skills following the open `agentskills.io` specification. | [`agent-skills/`](agent-skills/) |
