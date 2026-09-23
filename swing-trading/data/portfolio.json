@@ -1,0 +1,193 @@
+{
+  "last_updated": "2026-09-23T16:24:00+05:30",
+  "cash_balance": 20487.00,
+  "holdings": [
+    {
+      "symbol": "RECL",
+      "qty": 30,
+      "buy_price": 350.60,
+      "cmp": 312.00,
+      "stop_loss": 305.00,
+      "target_1": 345.00,
+      "setup_type": "swing_pullback",
+      "category": "large_cap",
+      "notes": "Testing multi-month support floor. Monitor closely."
+    },
+    {
+      "symbol": "BANKBARODA",
+      "qty": 20,
+      "buy_price": 246.44,
+      "cmp": 236.64,
+      "stop_loss": 232.00,
+      "target_1": 258.00,
+      "setup_type": "swing_pullback",
+      "category": "large_cap",
+      "notes": "Healthy pullback near 200 SMA support. Accumulate on green reversal."
+    },
+    {
+      "symbol": "INOXWIND",
+      "qty": 35,
+      "buy_price": 98.80,
+      "cmp": 76.00,
+      "stop_loss": 74.00,
+      "target_1": 88.00,
+      "setup_type": "breakout",
+      "category": "mid_cap",
+      "notes": "High drawdown (-23%). Planned exit on relief bounce."
+    },
+    {
+      "symbol": "AMBUJACEM",
+      "qty": 20,
+      "buy_price": 448.00,
+      "cmp": 391.70,
+      "stop_loss": 380.00,
+      "target_1": 425.00,
+      "setup_type": "swing_pullback",
+      "category": "large_cap",
+      "notes": "Cement sector consolidation. Exit on bounce toward ₹415."
+    },
+    {
+      "symbol": "BANKINDIA",
+      "qty": 20,
+      "buy_price": 124.35,
+      "cmp": 139.43,
+      "stop_loss": 124.35,
+      "target_1": 142.00,
+      "setup_type": "swing_pullback",
+      "category": "mid_cap",
+      "notes": "In profit (+12.1%). Stop moved to Breakeven (₹124.35)."
+    },
+    {
+      "symbol": "REDTAPE",
+      "qty": 9,
+      "buy_price": 116.55,
+      "cmp": 118.25,
+      "stop_loss": 112.00,
+      "target_1": 130.00,
+      "setup_type": "breakout",
+      "category": "small_cap",
+      "notes": "Base consolidation near cost basis."
+    },
+    {
+      "symbol": "NTPCGREEN",
+      "qty": 30,
+      "buy_price": 90.44,
+      "cmp": 95.65,
+      "stop_loss": 90.44,
+      "target_1": 102.00,
+      "setup_type": "swing_pullback",
+      "category": "large_cap",
+      "notes": "In profit (+5.8%). Stop at breakeven."
+    },
+    {
+      "symbol": "ITC",
+      "qty": 70,
+      "buy_price": 334.30,
+      "cmp": 269.10,
+      "stop_loss": 260.00,
+      "target_1": 310.00,
+      "setup_type": "swing_pullback",
+      "category": "large_cap",
+      "notes": "Heavy concentration (~₹23k). Do NOT average down. Hold for quarterly reversal."
+    },
+    {
+      "symbol": "PNB",
+      "qty": 40,
+      "buy_price": 106.88,
+      "cmp": 118.53,
+      "stop_loss": 112.00,
+      "target_1": 126.00,
+      "setup_type": "swing_pullback",
+      "category": "large_cap",
+      "notes": "In profit (+10.9%). Trail stop on 20 EMA."
+    },
+    {
+      "symbol": "IOCL",
+      "qty": 30,
+      "buy_price": 142.60,
+      "cmp": 137.62,
+      "stop_loss": 133.00,
+      "target_1": 148.00,
+      "setup_type": "swing_pullback",
+      "category": "large_cap",
+      "notes": "Dividend payer trading near ₹135 support."
+    },
+    {
+      "symbol": "PATELENG",
+      "qty": 300,
+      "buy_price": 36.04,
+      "cmp": 27.42,
+      "stop_loss": 26.00,
+      "target_1": 32.00,
+      "setup_type": "breakout",
+      "category": "small_cap",
+      "notes": "Speculative small-cap in drawdown (-23.9%). Exit on green spike."
+    },
+    {
+      "symbol": "CROMPTON",
+      "qty": 36,
+      "buy_price": 259.17,
+      "cmp": 223.99,
+      "stop_loss": 218.00,
+      "target_1": 242.00,
+      "setup_type": "swing_pullback",
+      "category": "large_cap",
+      "notes": "Weak momentum. Exit to free cash."
+    },
+    {
+      "symbol": "RAYMOND",
+      "qty": 9,
+      "buy_price": 371.33,
+      "cmp": 1127.15,
+      "stop_loss": 1050.00,
+      "target_1": 1200.00,
+      "setup_type": "long_term_core",
+      "category": "mid_cap",
+      "notes": "Huge multibagger (+203%). Book 50% profit (sell 4-5 shares) and trail remaining."
+    },
+    {
+      "symbol": "CANBK",
+      "qty": 80,
+      "buy_price": 106.13,
+      "cmp": 125.78,
+      "stop_loss": 118.00,
+      "target_1": 132.00,
+      "setup_type": "swing_pullback",
+      "category": "large_cap",
+      "notes": "In profit (+18.5%). Trim 30% and trail remainder on 20 EMA."
+    },
+    {
+      "symbol": "AVENUESAI",
+      "qty": 490,
+      "buy_price": 17.18,
+      "cmp": 16.13,
+      "stop_loss": 15.50,
+      "target_1": 18.20,
+      "setup_type": "breakout",
+      "category": "small_cap",
+      "notes": "Hovering near cost basis."
+    },
+    {
+      "symbol": "KTKBANK",
+      "qty": 30,
+      "buy_price": 172.80,
+      "cmp": 342.20,
+      "stop_loss": 320.00,
+      "target_1": 365.00,
+      "setup_type": "long_term_core",
+      "category": "mid_cap",
+      "notes": "Double winner (+98%). Book 50% profit (sell 15 shares) and trail remaining."
+    },
+    {
+      "symbol": "CREATIVE",
+      "qty": 7,
+      "buy_price": 613.10,
+      "cmp": 1136.40,
+      "stop_loss": 1050.00,
+      "target_1": 1220.00,
+      "setup_type": "long_term_core",
+      "category": "small_cap",
+      "notes": "Multibagger (+85%). Book 50% profit (sell 3-4 shares) and trail remaining."
+    }
+  ]
+}

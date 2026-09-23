@@ -1,0 +1,91 @@
+<!-- Company Storybook Studio — Page Patterns (8×10 inch portrait).
+     Assembles book.html as: <head> with <style> = company_book.css, then <body> with .reader-container containing these sections in order. -->
+
+<!-- 1. COVER PAGE (FULL BLEED) -->
+<section class="page cover bleed">
+  <img src="images/cover.png" alt="Cover Artwork">
+  <div class="scrim-top"></div>
+  <div class="scrim-bot"></div>
+  <div class="series-tag">Antigravity Executive Storybook Series</div>
+  <div class="title-wrap">
+    <h1 class="title">{{TITLE}}</h1>
+    <div class="subtitle">{{SUBTITLE}}</div>
+  </div>
+  <div class="author">
+    <small>Strategic Business Biography</small>
+    Curated for Members & Leadership
+  </div>
+</section>
+
+<!-- 2. TITLE PAGE -->
+<section class="page titlepage">
+  <div class="pad center-y">
+    <div class="mark">✦</div>
+    <h1>{{TITLE}}</h1>
+    <div class="sub">{{SUBTITLE}}</div>
+    <hr class="rule">
+    <div class="meta">
+      <strong>Company:</strong> {{COMPANY_NAME}}<br>
+      <strong>Founders:</strong> {{FOUNDER_NAMES}}<br>
+      <strong>Edition:</strong> Member Visual Briefing Edition
+    </div>
+  </div>
+</section>
+
+<!-- 3. PREFACE: WHY THIS STORY MATTERS -->
+<section class="page preface">
+  <div class="pad center-y">
+    <h2>Why This Story Matters</h2>
+    <p>{{PREFACE_PARAGRAPH_1}}</p>
+    <p>{{PREFACE_PARAGRAPH_2}}</p>
+    <p style="font-style: italic; color: var(--gold); margin-top: 20px;">
+      "{{FOUNDER_MEMORABLE_QUOTE}}"
+    </p>
+  </div>
+</section>
+
+<!-- REPEATING CHAPTER STRUCTURE (Chapters 1 through 5) -->
+
+<!-- CHAPTER SPLASH PAGE -->
+<section class="page ch-title">
+  <div class="pad center-y">
+    <div class="ch-num">Chapter {{N}}</div>
+    <h2>{{CHAPTER_TITLE}}</h2>
+    <div class="ch-theme">{{CHAPTER_THEME_LINE}}</div>
+  </div>
+</section>
+
+<!-- FULL-BLEED CHAPTER ILLUSTRATION -->
+<section class="page bleed">
+  <img src="images/chapter{{N}}.png" alt="{{CHAPTER_TITLE}}">
+</section>
+
+<!-- CHAPTER NARRATIVE STORY PAGE -->
+<section class="page story">
+  <div class="pad">
+    <div class="runhead">Chapter {{N}} • {{CHAPTER_TITLE}}</div>
+    <p class="first">{{NARRATIVE_PARAGRAPH_1}}</p>
+    <p>{{NARRATIVE_PARAGRAPH_2}}</p>
+    <p>{{NARRATIVE_PARAGRAPH_3}}</p>
+    
+    <!-- Executive Takeaway Card -->
+    <div class="takeaway-card">
+      <h4>✦ Executive Principle: {{PRINCIPLE_NAME}}</h4>
+      <p>{{PRINCIPLE_EXPLANATION}}</p>
+      <div class="question"><strong>Question for Your Team:</strong> {{REFLECTION_QUESTION}}</div>
+    </div>
+  </div>
+  <div class="pgnum">{{PAGE_NUMBER}}</div>
+</section>
+
+<!-- EPILOGUE & TIMELINE -->
+<section class="page story">
+  <div class="pad center-y">
+    <div class="runhead">Epilogue • The Continuing Frontier</div>
+    <p class="first">{{EPILOGUE_TEXT}}</p>
+    <div class="takeaway-card" style="border-left-color: var(--accent); margin-top: 30px;">
+      <h4 style="color: var(--accent);">✦ The Unwritten Horizon</h4>
+      <p>{{FUTURE_OUTLOOK_TEXT}}</p>
+    </div>
+  </div>
+</section>

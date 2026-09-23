@@ -1,0 +1,392 @@
+/* Company Storybook Studio — Executive Print & Reader Stylesheet (8×10 portrait)
+   Adopts the children's book print architecture for corporate biographies and member reading books. */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@600;700;800&display=swap');
+
+:root {
+  --cream: #FAF8F5;
+  --cream-soft: #F4EFEB;
+  --ink: #0F172A;
+  --ink-muted: #475569;
+  --gold: #D97706;
+  --gold-glow: #F59E0B;
+  --gold-soft: #FEF3C7;
+  --accent: #2563EB;
+  --accent-soft: #EFF6FF;
+  --emerald: #059669;
+  --emerald-soft: #ECFDF5;
+  --border: #E2E8F0;
+}
+
+@page {
+  size: 8in 10in;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #0B0F19;
+}
+
+body {
+  font-family: 'Lora', Georgia, serif;
+  color: var(--ink);
+}
+
+.reader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 40px 0;
+}
+
+.page {
+  position: relative;
+  width: 8in;
+  height: 10in;
+  overflow: hidden;
+  background: var(--cream);
+  page-break-after: always;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.page:last-child {
+  page-break-after: auto;
+}
+
+.pad {
+  padding: 0.9in 0.85in;
+  height: 100%;
+}
+
+.center-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Full-bleed illustration pages */
+.bleed img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Cover Styling */
+.cover .scrim-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4.2in;
+  background: linear-gradient(to bottom, rgba(11, 15, 25, 0.88), rgba(11, 15, 25, 0.45) 60%, rgba(11, 15, 25, 0));
+}
+
+.cover .scrim-bot {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5in;
+  background: linear-gradient(to top, rgba(11, 15, 25, 0.90), rgba(11, 15, 25, 0));
+}
+
+.cover .series-tag {
+  position: absolute;
+  top: 0.65in;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-glow);
+}
+
+.cover .title-wrap {
+  position: absolute;
+  top: 1.05in;
+  left: 0.6in;
+  right: 0.6in;
+  text-align: center;
+}
+
+.cover .title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 1.05;
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: 1px;
+  text-shadow: 0 3px 20px rgba(0,0,0,0.6);
+}
+
+.cover .subtitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #E2E8F0;
+  margin-top: 0.18in;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+.cover .author {
+  position: absolute;
+  bottom: 0.65in;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+}
+
+.cover .author small {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--gold-glow);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+/* Title Page */
+.titlepage {
+  text-align: center;
+}
+
+.titlepage .mark {
+  font-size: 26px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.titlepage h1 {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0;
+}
+
+.titlepage .sub {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--ink-muted);
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+.titlepage .rule {
+  width: 1.2in;
+  height: 2px;
+  background: var(--gold);
+  border: none;
+  margin: 0.35in auto;
+}
+
+.titlepage .meta {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+
+/* Preface / Note */
+.preface h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 26px;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+
+.preface p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--ink-muted);
+  margin-bottom: 14px;
+}
+
+/* Chapter Title Page */
+.ch-title {
+  text-align: center;
+  background: var(--cream-soft);
+}
+
+.ch-num {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.ch-title h2 {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0 0 16px 0;
+}
+
+.ch-theme {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--ink-muted);
+  max-width: 5in;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Narrative Story Pages */
+.story .runhead {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+  margin-bottom: 24px;
+}
+
+.story p {
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: #1E293B;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.story p.first::first-letter {
+  font-family: 'Cinzel', serif;
+  font-size: 58px;
+  line-height: 0.85;
+  float: left;
+  margin: 4px 10px 0 0;
+  color: var(--gold);
+}
+
+.story .pgnum {
+  position: absolute;
+  bottom: 0.5in;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  color: #94A3B8;
+}
+
+/* Executive Takeaway Card */
+.takeaway-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 22px 26px;
+  margin-top: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.takeaway-card h4 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+  margin: 0 0 10px 0;
+}
+
+.takeaway-card p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0 0 12px 0;
+  text-align: left;
+}
+
+.takeaway-card .question {
+  font-style: italic;
+  color: var(--ink-muted);
+  font-size: 12.5px;
+  border-top: 1px dashed var(--border);
+  padding-top: 10px;
+}
+
+/* Top Sticky Bar (Browser Reader Mode) */
+.reader-toolbar {
+  position: sticky;
+  top: 16px;
+  z-index: 1000;
+  display: flex;
+  gap: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.reader-toolbar button {
+  background: var(--accent);
+  color: #FFFFFF;
+  border: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.reader-toolbar button:hover {
+  background: #1D4ED8;
+}
+
+/* Print Overrides */
+@media print {
+  html, body {
+    background: transparent;
+  }
+  .reader-container {
+    padding: 0;
+    gap: 0;
+  }
+  .reader-toolbar {
+    display: none !important;
+  }
+  .page {
+    box-shadow: none;
+    margin: 0;
+  }
+}

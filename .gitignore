@@ -1,0 +1,15 @@
+# Credentials & Sensitive Tokens (STRICT EXCLUSION)
+*.env
+.env.*
+*.key
+*.pem
+credentials/
+client_secrets.json
+token.json
+
+# Dependencies & Caches
+__pycache__/
+*.pyc
+.DS_Store
+*.log
+node_modules/
