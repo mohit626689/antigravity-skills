@@ -9,6 +9,7 @@ HOLD, BOOK 50% & TRAIL, CUT LOSS, or ACCUMULATE/AVERAGE.
 import sys
 import json
 import argparse
+from pathlib import Path
 from typing import List, Dict, Any
 
 
@@ -191,12 +192,26 @@ def main():
     args = parser.parse_args()
 
     holdings = []
-    if args.file:
+    target_file = args.file
+    if not target_file and not args.demo:
+        default_path = Path(__file__).parent.parent / "data" / "portfolio.json"
+        if default_path.exists():
+            target_file = str(default_path)
+
+    if target_file:
         try:
-            with open(args.file, "r") as f:
-                holdings = json.load(f)
+            with open(target_file, "r") as f:
+                raw_data = json.load(f)
+                if isinstance(raw_data, dict) and "holdings" in raw_data:
+                    raw_holdings = raw_data["holdings"]
+                else:
+                    raw_holdings = raw_data
+                for item in raw_holdings:
+                    if "current_price" not in item and "cmp" in item:
+                        item["current_price"] = item["cmp"]
+                    holdings.append(item)
         except Exception as e:
-            print(f"Error loading {args.file}: {e}", file=sys.stderr)
+            print(f"Error loading {target_file}: {e}", file=sys.stderr)
             sys.exit(1)
     else:
         # Default realistic demo portfolio

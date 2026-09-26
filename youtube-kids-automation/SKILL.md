@@ -1,16 +1,16 @@
 ---
 name: youtube-kids-automation
-description: Autonomous broadcast-grade YouTube channel automation operating system for kids and preschool animation channels. Generates 3D Pixar-clay characters, high-retention toddler scripts, authentic neural child voiceovers, dynamic animated Ken Burns scenes with synchronized cartoon SFX, zero-overlap ASS subtitles, vidIQ 96-score SEO metadata, and 100-day automated scheduled publishing via YouTube Data API v3.
-compatibility: Python 3.10+, FFmpeg with libass, Node.js 18+, YouTube Data API v3
+description: Autonomous broadcast-grade YouTube channel automation operating system for kids and preschool animation channels. Powered exclusively by HyperFrames (heygen-com/hyperframes) for 60fps butter-smooth animations, 3D Pixar-clay characters, high-retention toddler scripts, authentic neural child voiceovers, triple-tier shorts framing, kinetic rounded pill subtitles, vidIQ 96-score SEO metadata, and 100-day automated scheduled publishing via YouTube Data API v3.
+compatibility: Python 3.10+, FFmpeg with libass, Node.js 18+, HyperFrames 0.8+, YouTube Data API v3
 metadata:
   standard: "agentskills.io"
-  version: "1.0.0"
+  version: "2.0.0"
   author: "Antigravity & ABC Zoo TV"
 ---
 
-# YouTube Kids Channel Automation Engine
+# YouTube Kids Channel Automation Engine (HyperFrames Edition)
 
-An end-to-end autonomous operating system designed for running a high-retention, broadcast-grade preschool and toddler YouTube channel (Letters A–Z, daily habit songs, early learning concepts, and mega compilation binge loops).
+An end-to-end autonomous operating system designed for running a high-retention, broadcast-grade preschool and toddler YouTube channel (Letters A–Z, daily habit songs, early learning concepts, and mega compilation binge loops) powered exclusively by **HyperFrames**.
 
 ---
 
@@ -19,7 +19,7 @@ An end-to-end autonomous operating system designed for running a high-retention,
 Activate this skill when:
 - The user wants to automate, produce, or scale a YouTube Kids / Preschool / Animation channel.
 - The user requests scripts, 3D character IP, or scene prompts for nursery rhymes and alphabet songs.
-- The user asks to compose, render, or animate preschool videos in 1080p Landscape (16:9) or Shorts (9:16).
+- The user asks to compose, render, or edit preschool videos in 1080p Landscape (16:9) or Shorts (9:16) using **HyperFrames**.
 - The user wants authentic neural child voiceovers (`en-US-AnaNeural`) with dynamic sequential audio chaining.
 - The user asks to auto-upload or schedule videos on YouTube with vidIQ 96+ SEO metadata and automatic playlist organization.
 
@@ -36,7 +36,8 @@ youtube-kids-automation/
 ├── kids_script_template.md           # 5-Scene high-retention toddler script formula
 └── scripts/
     ├── generate_neural_child_voice.js # Microsoft Edge neural child voice synthesizer (en-US-AnaNeural)
-    ├── generate_animated_episode.py   # Multi-layer video compositor (Ken Burns + SFX + zero-overlap ASS)
+    ├── render_hyperframes_episode.py  # Primary 60fps HyperFrames compositor (HTML/CSS/GSAP)
+    ├── generate_animated_episode.py   # Multi-layer video compositor (HyperFrames default)
     ├── upload_to_youtube.py          # Zero-dependency YouTube Data API v3 uploader & playlist router
     └── autonomous_100_days_scheduler.py # 100-Day 2x daily (8 AM & 5 PM) cloud scheduler
 ```
@@ -62,15 +63,21 @@ node scripts/generate_neural_child_voice.js "episodes/Ep_001_Letter_A" "en-US-An
 ```
 Produces verbatim audio clips (`ana_seg_0.mp3` to `ana_seg_7.mp3`) with verified speech cadence.
 
-### 3. Dynamic Sequential Audio & Video Composition
-Renders 1080p Full HD video with **Dynamic Sequential Chaining** to guarantee zero vocal collisions and zero subtitle overlaps:
+### 3. HyperFrames 60fps Video Composition & Editing (Exclusive Engine)
+HyperFrames is the exclusive video editor and rendering engine for both formats:
 ```bash
-python3 scripts/generate_animated_episode.py --episode_dir "episodes/Ep_001_Letter_A" --format both --theme 0
+# Render both Landscape (16:9) and Shorts (9:16)
+python3 scripts/render_hyperframes_episode.py --episode_dir "episodes/Ep_001_Letter_A" --format both
+
+# Or run animated pipeline (defaults to HyperFrames):
+python3 scripts/generate_animated_episode.py --episode_dir "episodes/Ep_001_Letter_A" --format both --engine hyperframes
 ```
-- **Sequential Voice Chaining:** Uses `ffprobe` to probe exact segment durations; starts lines sequentially with breathing pauses (`0.60s` for rhymes, `1.35s` for interactive games).
-- **Zero-Overlap Subtitles:** Clamps subtitle end time to `min(seg[i]['end'] + 0.3s, seg[i+1]['start'] - 0.15s)` so dialogues never collide on screen.
-- **Synchronized Cartoon SFX:** Procedural pop on mascot entrance, chime on letter reveal, boing on dancing verse, and fanfare on celebration.
-- **Rotating Subtitle Typography:** Rotates across 10 custom typography designs (`Arial Rounded MT Bold`, `Chalkboard SE`, `Marker Felt`, `Comic Sans MS`, `Arial Black`).
+
+#### HyperFrames Preschool Video Features:
+- **60fps Fluid Camera Easing:** Eliminates robotic linear motion using GSAP cubic and `power1.inOut` curves.
+- **Triple-Tier Shorts Architecture:** Full ambient background blur + 1040x585 crisp cinema stage card with white stroke & drop shadow + top gold pill header.
+- **Interactive Spotlight & Hover Physics:** Floating Letter Badge with dynamic sinusoidal breathing and SVG animated spotlight pointing at hidden objects.
+- **Kinetic Pill Subtitles:** Bold, rounded high-contrast typography with colored highlights synchronized to audio segments.
 
 ### 4. vidIQ Score 96+ Upload & Automatic Playlist Organization
 Uploads video using YouTube Data API v3 with pre-configured OAuth 2.0:
