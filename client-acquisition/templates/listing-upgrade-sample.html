@@ -1,0 +1,102 @@
+<!doctype html>
+<!--
+  Listing upgrade sample: one page, print-ready (Letter). Used by /airbnb-sample.
+  Replace every {{PLACEHOLDER}}. Delete a whole <section> rather than leaving it empty.
+  Rules: no Airbnb logo/colours/branding, no copied Airbnb photos or text, only facts from the evidence,
+  the business's own website, or the user's notes. Keep the label in the footer.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Listing upgrade sample: {{BUSINESS}}</title>
+<style>
+  :root { --ink:#1d2329; --muted:#5f6b76; --line:#e3e7eb; --accent:#2f6f5e; --soft:#f3f7f5; }
+  @page { size: Letter; margin: 0.45in; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:#fff; color:var(--ink); font:13px/1.45 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  .page { max-width: 7.6in; margin: 0 auto; padding: 4px 0; }
+  header { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:2px solid var(--accent); padding-bottom:10px; }
+  h1 { font-size:21px; margin:0 0 2px; letter-spacing:-.2px; }
+  .sub { color:var(--muted); font-size:12px; }
+  .meta { text-align:right; color:var(--muted); font-size:11.5px; line-height:1.5; }
+  h2 { font-size:13.5px; text-transform:uppercase; letter-spacing:.6px; color:var(--accent); margin:16px 0 6px; }
+  section { break-inside: avoid; }
+  ul { margin:4px 0 0; padding-left:18px; }
+  li { margin:2px 0; }
+  .ev { color:var(--muted); font-size:11px; }
+  table { width:100%; border-collapse:collapse; font-size:12px; }
+  th, td { text-align:left; padding:5px 6px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.4px; }
+  .pill { display:inline-block; padding:1px 7px; border-radius:9px; font-size:10.5px; background:var(--soft); color:var(--accent); font-weight:600; }
+  .box { background:var(--soft); border-radius:8px; padding:10px 12px; }
+  .title { font-weight:650; font-size:14px; margin-bottom:4px; }
+  .cols { display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+  .next { border:1px solid var(--line); border-radius:8px; padding:10px 12px; margin-top:16px; }
+  footer { margin-top:16px; padding-top:8px; border-top:1px solid var(--line); color:var(--muted); font-size:10.5px; }
+  @media (max-width: 640px) { header { display:block; } .meta { text-align:left; margin-top:6px; } .cols { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <h1>Listing upgrade sample</h1>
+      <div class="sub">For {{BUSINESS}} · {{PROPERTY_NAME_OR_SHORT_DESCRIPTION}}</div>
+    </div>
+    <div class="meta">Listing viewed {{DATE_VIEWED}}<br>Prepared by {{SENDER_NAME}} · {{SENDER_BUSINESS}}</div>
+  </header>
+
+  <section>
+    <h2>What I noticed</h2>
+    <ul>
+      <!-- one <li> per OBSERVED gap from the evidence; keep the user's exact facts -->
+      <li>{{GAP_1}} <span class="ev">({{EVIDENCE_REF_1}})</span></li>
+      <li>{{GAP_2}} <span class="ev">({{EVIDENCE_REF_2}})</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Photo plan</h2>
+    <table>
+      <tr><th style="width:34%">Shot</th><th>Why</th><th style="width:12%">Priority</th></tr>
+      <!-- written shot list only; never embed their Airbnb photos -->
+      <tr><td>{{SHOT_1}}</td><td>{{SHOT_1_WHY}}</td><td><span class="pill">High</span></td></tr>
+      <tr><td>{{SHOT_2}}</td><td>{{SHOT_2_WHY}}</td><td><span class="pill">High</span></td></tr>
+      <tr><td>{{SHOT_3}}</td><td>{{SHOT_3_WHY}}</td><td><span class="pill">Medium</span></td></tr>
+    </table>
+    <p class="ev">Suggested order: {{PHOTO_ORDER}}. Suggested cover shot: {{COVER_SHOT}}.</p>
+  </section>
+
+  <section>
+    <h2>Suggested title and description</h2>
+    <div class="box">
+      <div class="title">{{SUGGESTED_TITLE}}</div>
+      <div>{{SUGGESTED_DESCRIPTION}}</div>
+    </div>
+    <p class="ev">Written from {{FACT_SOURCE}}. Details marked [confirm] need your input before use.</p>
+  </section>
+
+  <section class="cols">
+    <div>
+      <h2>Details guests look for</h2>
+      <ul>
+        <!-- only items the evidence says are missing -->
+        <li>{{MISSING_DETAIL_1}}</li>
+        <li>{{MISSING_DETAIL_2}}</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Optional: short video</h2>
+      <p>{{VIDEO_IDEA_OR_LINK}}</p>
+    </div>
+  </section>
+
+  <section class="next">
+    <strong>If useful:</strong> {{PAID_NEXT_STEP}}
+  </section>
+
+  <footer>{{LABEL_WITH_REAL_DATE}}</footer>
+</div>
+</body>
+</html>

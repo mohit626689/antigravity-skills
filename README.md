@@ -32,3 +32,17 @@ To use any skill in your agent workspace:
 
 ## 📄 License
 MIT License. Created for the AI Builder & Automation Community.
+
+
+### 🚀 New Added Suites & Skills
+| Skill | Description | Directory |
+|---|---|---|
+| **ai-reputation-claude** | 🌟 AI Online Reputation & Sentiment Analyzer | [ai-reputation-claude/](ai-reputation-claude/) |
+| **brain-map** | 🌌 Interactive 2D/3D Knowledge Galaxy & Vault Mapper | [brain-map/](brain-map/) |
+| **ai-trading-claude** | 📈 Stock, Options & Risk Intelligence Engine | [ai-trading-claude/](ai-trading-claude/) |
+| **ai-finance-claude** | 💰 Personal Finance, FIRE Calculator & Tax Planner | [ai-finance-claude/](ai-finance-claude/) |
+| **ai-realestate-claude** | 🏡 Real Estate Comps, BRRRR & Investment Engine | [ai-realestate-claude/](ai-realestate-claude/) |
+| **ai-restaurant-claude** | 🍽️ Restaurant Marketing, Local SEO & Review Suite | [ai-restaurant-claude/](ai-restaurant-claude/) |
+| **ai-crypto-claude** | 🪙 Crypto Tokenomics & On-Chain Intelligence | [ai-crypto-claude/](ai-crypto-claude/) |
+| **client-acquisition** | 🎯 Multi-Offer B2B Client Acquisition Hub | [client-acquisition/](client-acquisition/) |
+

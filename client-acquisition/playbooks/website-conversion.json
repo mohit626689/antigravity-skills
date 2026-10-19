@@ -1,0 +1,84 @@
+{
+  "id": "website-conversion",
+  "name": "Booking and tap-to-call gaps on local service websites",
+  "version": 1,
+
+  "offer": {
+    "title": "Mobile homepage fix: tap-to-call and a clear online booking path",
+    "summary": "A concept of your own homepage's top section on a phone, with a tap-to-call button and a booking button.",
+    "paid_next_step": "Implement the booking button and tap-to-call on the live site, connected to the booking tool they already use or a free one.",
+    "deliverable": "One-page concept mockup (image or private link)"
+  },
+
+  "target": {
+    "description": "Owner-led local service businesses (clinics, salons, home services) whose site makes visitors call or email to book.",
+    "countries": ["US"],
+    "default_country": "US"
+  },
+
+  "discovery": {
+    "source": "google_places",
+    "queries": ["dentist", "med spa", "hvac contractor", "physical therapy clinic", "hair salon"],
+    "filters": {
+      "require_website": true,
+      "reviews_min": 20,
+      "exclude_name_pattern": "aspen dental|great clips|supercuts|sport clips|massage envy|european wax"
+    }
+  },
+
+  "crawl": {
+    "max_pages": 4,
+    "page_keywords": "contact|book|appointment|schedule|services|about"
+  },
+
+  "checks": [
+    {
+      "id": "no_online_booking",
+      "label": "Online booking link or button",
+      "type": "link",
+      "pattern": "calendly|acuityscheduling|vagaro|booksy|mindbody|zocdoc|square\\.site|squareup\\.com/appointments|setmore|schedulicity|janeapp|nexhealth|localmed|housecallpro|servicetitan|getjobber|clienthub|fresha|glossgenius|boulevard|zenoti|/book(ing)?(-online|-now|-appointment)?/?$",
+      "text_pattern": "^\\s*(book|schedule|request)\\s+(now|online|an? appointment|appointment|a visit|service)\\s*$",
+      "hit_if": "absent",
+      "problem": "No online booking path found on the checked pages"
+    },
+    {
+      "id": "no_tel_link",
+      "label": "Tap-to-call phone link",
+      "type": "link",
+      "pattern": "^tel:",
+      "hit_if": "absent",
+      "problem": "Phone number is not a tap-to-call link"
+    },
+    {
+      "id": "runs_ads",
+      "label": "Active ads in the Meta Ad Library",
+      "type": "manual",
+      "instructions": "Open https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&q=<business name>. If they have active ads, record --hit yes with that URL as --source-url. A signal of marketing spend, not proof."
+    }
+  ],
+
+  "qualify": {
+    "all_of": ["no_online_booking"],
+    "signals": ["no_tel_link", "runs_ads"]
+  },
+
+  "hypotheses": [
+    "Some visitors may prefer to book online instead of calling during opening hours. Not measured for this business."
+  ],
+
+  "sample": {
+    "type": "mockup_page",
+    "required": true,
+    "label": "Concept mockup using text and images from your current website. Not live, not published.",
+    "instructions": "Recreate the top of their homepage at phone width using their real logo, headline and colors from the brief's assets, then add a 'Call now' tap-to-call button and a 'Book online' button. Export a PNG (or a private HTML link). No invented offers, prices, reviews or awards."
+  },
+
+  "message": {
+    "channels": ["email", "contact_form", "facebook", "instagram"],
+    "max_words": 110,
+    "followup_max_words": 60,
+    "allowed_numbers": [],
+    "forbidden_phrases": ["more patients guaranteed", "conversion rate", "increase sales by"],
+    "guidance": "Name the one thing you saw on the pages you checked (no booking link; phone not tap-to-call), show the mockup, offer to set it up. One question at the end."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "_about": "Business-level outreach policy shared by EVERY playbook. These are starting values you chose to run with, not legal advice. Check the rules that apply to the regions you contact.",
+
+  "allowed_countries": ["US"],
+
+  "_cooldown": "No new message of any kind to a business within this many days of the last message on any channel or topic.",
+  "cooldown_days_any_touch": 90,
+
+  "_recontact": "A business that never answered a pitch is not pitched again automatically. null = never; a number = allowed again after that many days (still subject to every other rule).",
+  "recontact_unanswered_after_days": null,
+
+  "max_followups_per_pitch": 1,
+  "followup_min_days": 3,
+  "followup_max_days": 21,
+
+  "max_touches_per_business_365d": 3,
+
+  "_daily_email_cap": "Counts acq AND the GEO send ledger together, because both use the same Gmail account.",
+  "daily_email_cap_combined": 5,
+
+  "_engaged": "When a business has replied, no new automated pitch on another topic. Bring the extra opportunity into that conversation yourself.",
+  "block_new_pitch_when_engaged": true,
+
+  "blocked_statuses": ["not_interested", "opted_out", "do_not_contact", "client", "lost", "merged"],
+
+  "forbidden_phrases": [
+    "guarantee", "guaranteed", "risk-free", "100%", "#1", "number one", "rank first", "top of google",
+    "double your", "triple your", "10x", "skyrocket", "explode your", "act now", "limited time", "last chance",
+    "urgent", "you're losing", "you are losing", "losing customers", "lost revenue", "ai visibility score",
+    "chatgpt recommends", "as seen on", "dear sir", "dear madam"
+  ],
+
+  "placeholder_email_domains": [
+    "example.com", "domain.com", "yourdomain.com", "yoursite.com", "company.com", "test.com", "sample.com",
+    "email.com", "sentry.io", "wixpress.com", "sentry-next.wixpress.com"
+  ],
+
+  "freemail_domains": [
+    "gmail.com", "googlemail.com", "yahoo.com", "ymail.com", "hotmail.com", "outlook.com", "live.com", "msn.com",
+    "aol.com", "icloud.com", "me.com", "mac.com", "proton.me", "protonmail.com", "gmx.com", "zoho.com", "comcast.net",
+    "att.net", "verizon.net", "sbcglobal.net", "bellsouth.net", "cox.net", "charter.net"
+  ]
+}

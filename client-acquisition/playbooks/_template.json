@@ -1,0 +1,68 @@
+{
+  "_how_to": "Copy this file to playbooks/<your-id>.json, fill it in, then run: python3 ~/.gemini/config/skills/acq/acq.py playbook validate <your-id>. Keys starting with _ are notes and are ignored.",
+
+  "id": "my-offer",
+  "name": "One line: who has which problem",
+  "version": 1,
+
+  "offer": {
+    "title": "What you will do for them, in plain words",
+    "summary": "One or two sentences about the deliverable.",
+    "paid_next_step": "What they can buy after the free sample.",
+    "deliverable": "What the sample is (video, mockup, PDF ...)"
+  },
+
+  "target": {
+    "description": "Who this is for and where you find them. Do not target platforms whose rules forbid scraping or off-platform contact.",
+    "countries": ["US"],
+    "default_country": "US"
+  },
+
+  "_discovery": "source: google_places (needs queries; uses the shared free Places budget) | urls | csv (you pass --urls/--csv to `acq find`).",
+  "discovery": {
+    "source": "google_places",
+    "queries": ["search phrase 1", "search phrase 2"],
+    "filters": {"require_website": true, "reviews_min": 10, "rating_min": null, "rating_max": null, "exclude_name_pattern": "big chain|franchise"}
+  },
+
+  "crawl": {"max_pages": 5, "page_keywords": "contact|about|services|gallery"},
+
+  "_checks": "Types: element (HTML tags), link (href regex), text (visible-text regex), count (images or tags, min/max), jsonld_type (schema.org types), https, manual (a person verifies in the browser and records a source URL). hit_if 'absent' means the condition is true when nothing is found. Add 'problem' to the checks that describe what you will fix.",
+  "checks": [
+    {
+      "id": "problem_check",
+      "label": "Thing you look for",
+      "type": "element",
+      "match": [{"tag": "video"}],
+      "hit_if": "absent",
+      "problem": "Plain description of the problem a client would recognize"
+    },
+    {
+      "id": "pays_signal",
+      "label": "Willingness-to-pay signal",
+      "type": "manual",
+      "instructions": "How to verify in a browser and which URL to record with --source-url."
+    }
+  ],
+
+  "qualify": {"all_of": ["problem_check"], "signals": ["pays_signal"]},
+
+  "hypotheses": ["Possible benefit you have NOT measured. It will always be labelled as unverified."],
+
+  "_sample_types": "video | image | mockup_page | pdf_report | document | none",
+  "sample": {
+    "type": "video",
+    "required": true,
+    "label": "Honest caption shown with the sample (what it is made from, that it is private).",
+    "instructions": "How the agent builds the sample, from which assets, with which local tool."
+  },
+
+  "message": {
+    "channels": ["email", "contact_form"],
+    "max_words": 120,
+    "followup_max_words": 60,
+    "allowed_numbers": [],
+    "forbidden_phrases": [],
+    "guidance": "Tone and structure for the agent writing the message."
+  }
+}

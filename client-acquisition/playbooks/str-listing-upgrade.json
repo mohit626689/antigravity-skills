@@ -1,0 +1,214 @@
+{
+  "id": "str-listing-upgrade",
+  "name": "Listing upgrade for multi-property hosts, managers and brokers",
+  "version": 3,
+  "_rules": "Airbnb's Terms of Service (11.1) forbid bots, scrapers and automated access, and using Airbnb messaging or members' personal information to send commercial messages without consent; platform content may only be used as needed to use Airbnb. So: YOU browse Airbnb yourself, the engine never fetches it, targets are businesses (not private individuals), contact goes only to the business's own published channels, and samples never reuse Airbnb photos or text.",
+  "offer": {
+    "title": "Listing refresh: photo plan, rewritten descriptions and a short video for your properties",
+    "summary": "For one of your properties: what to reshoot or add, a clearer description, and a short video idea for your own website and social channels.",
+    "paid_next_step": "Refresh all listings: photo shot lists or a photographer brief, rewritten titles and descriptions, and a short video per property for their own channels.",
+    "deliverable": "One-page listing upgrade sample (PDF or private link)"
+  },
+  "target": {
+    "description": "Hosts operating as a business with 2+ short-term rental listings: property managers, co-hosting companies, real estate brokers who manage rentals. Not private one-listing hosts.",
+    "countries": [
+      "US"
+    ],
+    "default_country": "US"
+  },
+  "discovery": {
+    "source": "google_places",
+    "queries": [
+      "vacation rental management company",
+      "short term rental management",
+      "airbnb property management"
+    ],
+    "default_locations": [
+      "Gatlinburg, TN",
+      "Pigeon Forge, TN",
+      "Sedona, AZ",
+      "Destin, FL",
+      "Panama City Beach, FL",
+      "Myrtle Beach, SC",
+      "Gulf Shores, AL",
+      "Broken Bow, OK",
+      "Branson, MO",
+      "Galveston, TX",
+      "South Lake Tahoe, CA",
+      "Poconos, PA"
+    ],
+    "filters": {
+      "require_website": true,
+      "reviews_min": 5,
+      "exclude_name_pattern": "vacasa|evolve|avantstay|sonder|awning|marriott|hilton|hyatt|wyndham|airbnb inc"
+    }
+  },
+  "crawl": {
+    "max_pages": 7,
+    "page_keywords": "propert|rental|cabin|villa|condo|cottage|chalet|home|stay|unit|lodging|book|contact|about",
+    "priority_pattern": "/(propert(y|ies)|rentals?|vacation-rentals?|listings?|units?|homes?|cabins?|villas?|condos?|cottages?|chalets?|accommodations?|lodging|stays?)/[^/?#]+"
+  },
+  "checks": [
+    {
+      "id": "multi_listing",
+      "label": "Manages 2+ rental listings",
+      "type": "manual",
+      "instructions": "The user confirms in THEIR OWN browser that the Airbnb host profile shows 2+ listings (Antigravity must not open Airbnb), OR the business's own website lists 2+ properties. Record --hit yes, --source-url = that page, --note '<N> listings'."
+    },
+    {
+      "id": "site_multi_property",
+      "label": "2+ properties listed on their own website",
+      "type": "count",
+      "match": [
+        {
+          "tag": "a",
+          "attr": "href",
+          "pattern": "/(propert(y|ies)|rentals?|vacation-rentals?|listings?|units?|homes?|cabins?|villas?|condos?|cottages?|chalets?|accommodations?|lodging|stays?)/[^/?#]+"
+        }
+      ],
+      "unique_attr": "href",
+      "min": 2
+    },
+    {
+      "id": "photo_gap",
+      "label": "Listing photos have concrete gaps",
+      "type": "manual",
+      "problem": "Listing photos have specific gaps (too few, missing rooms, or dark/low-resolution shots)",
+      "instructions": "Look at one property: on Airbnb ONLY the user looks; on the business's OWN website Antigravity may open the property page in the browser and count the photos in the rendered gallery. --hit yes ONLY for checkable gaps: fewer than 15 photos; no photo of a bedroom/bathroom/kitchen/exterior that is described; several dark/blurry/low-resolution photos (say which). --note lists them; --source-url = the page looked at."
+    },
+    {
+      "id": "description_gap",
+      "label": "Description is thin or missing key details",
+      "type": "manual",
+      "problem": "Listing description is short or leaves out details guests usually ask about",
+      "instructions": "Same property page (Airbnb: user only; own website: Antigravity may look). --hit yes ONLY for concrete gaps: description under ~80 words, or missing basics such as parking, check-in method, bed sizes. --note names them; --source-url = that page."
+    },
+    {
+      "id": "has_contact",
+      "label": "Business contact channel of their own",
+      "type": "contact_available"
+    },
+    {
+      "id": "site_no_video",
+      "label": "Video on their website (embedded, or a linked video channel)",
+      "type": "element",
+      "match": [
+        {
+          "tag": "video"
+        },
+        {
+          "tag": "iframe",
+          "attr": "src",
+          "pattern": "youtube|youtu\\.be|vimeo|wistia|loom|matterport|kuula|tiktok"
+        },
+        {
+          "tag": "meta",
+          "attr": "property",
+          "pattern": "^og:video"
+        },
+        {
+          "tag": "a",
+          "attr": "href",
+          "pattern": "youtube\\.com/(watch|shorts|@|user/|channel/|c/)|youtu\\.be/|vimeo\\.com/|tiktok\\.com/@"
+        }
+      ],
+      "hit_if": "absent",
+      "problem": "No video on their website and no video channel linked from it"
+    },
+    {
+      "id": "site_no_parking",
+      "label": "Parking information on a property page",
+      "type": "text",
+      "pattern": "\\bparking\\b|\\bpark (up to|your)|driveway|garage",
+      "hit_if": "absent",
+      "problem": "A property page on their website does not mention parking",
+      "pages": "detail"
+    },
+    {
+      "id": "site_no_checkin",
+      "label": "Check-in information on a property page",
+      "type": "text",
+      "pattern": "check[- ]?in|self[- ]check|keyless|lockbox|smart lock|keypad",
+      "hit_if": "absent",
+      "problem": "A property page on their website does not explain check-in",
+      "pages": "detail"
+    },
+    {
+      "id": "site_few_photos",
+      "label": "Photos in the HTML of a property page",
+      "type": "count",
+      "source": "images",
+      "aggregate": "min",
+      "max": 12,
+      "exclude_pattern": "logo|icon|favicon|sprite|badge|avatar|\\.svg|map",
+      "pages": "detail"
+    },
+    {
+      "id": "runs_ads",
+      "label": "Active ads in the Meta Ad Library",
+      "type": "manual",
+      "instructions": "Open https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&q=<company name>. If they run active ads, record --hit yes with that URL. A sign of marketing spend, not proof they will pay."
+    }
+  ],
+  "qualify": {
+    "all_of": [
+      "has_contact"
+    ],
+    "any_of": [
+      [
+        "multi_listing",
+        "site_multi_property"
+      ],
+      [
+        "photo_gap",
+        "description_gap",
+        "site_no_video",
+        "site_no_parking",
+        "site_no_checkin"
+      ]
+    ],
+    "signals": [
+      "site_few_photos",
+      "runs_ads"
+    ]
+  },
+  "hypotheses": [
+    "Fuller photo sets and clearer descriptions may help guests decide faster. Not measured for this business.",
+    "A short property video may be useful on their own website and social channels. Not measured."
+  ],
+  "sample": {
+    "type": "document",
+    "required": true,
+    "label": "Independent suggestions based on your public listing as viewed on <date>. Not affiliated with Airbnb. Not published.",
+    "instructions": "One page (HTML or PDF), for ONE property: (1) What I noticed: the recorded gaps, with the listing link and the date viewed. (2) Photo plan: the missing shots, a suggested cover photo type and order, as a written shot list. Do NOT copy or download their Airbnb photos. (3) Description: a rewritten title and description written in your own words from facts on THEIR OWN website or the user's notes. Never paste Airbnb text. Use no amenities, ratings or numbers you cannot point to. (4) Optional: if their own website has property photos, a 20-second video from those, made like the listing-video playbook (`acq sample prepare ... --download-images 10` fetches from their own site only). (5) The label above, with the real date."
+  },
+  "message": {
+    "channels": [
+      "email",
+      "contact_form",
+      "instagram",
+      "facebook",
+      "linkedin"
+    ],
+    "max_words": 120,
+    "followup_max_words": 60,
+    "allowed_numbers": [],
+    "forbidden_phrases": [
+      "more bookings guaranteed",
+      "increase bookings by",
+      "boost bookings",
+      "superhost status",
+      "airbnb partner",
+      "on behalf of airbnb",
+      "airbnb team"
+    ],
+    "guidance": "Address the business, not a person's name taken from Airbnb. Say you came across their public listings, name ONE concrete gap from the evidence (e.g. 'the Lake House listing has no bathroom photo'), share the sample, offer the refresh across their properties, and end with one question. Never imply you work with or for Airbnb. No claims about bookings, rankings or revenue."
+  },
+  "_how_it_qualifies": "Has a business channel of its own + manages 2+ properties (seen on Airbnb by the user, or listed on its own site) + at least one observed gap (user's Airbnb notes, or on its own property pages: no video, no parking info, no check-in info). site_few_photos only raises priority: photo counts from raw HTML can be low when galleries load with JavaScript, so confirm in the browser before saying it.",
+  "detail_page": {
+    "path_pattern": "/(propert(y|ies)|rentals?|vacation-rentals?|listings?|units?|homes?|cabins?|villas?|condos?|cottages?|chalets?|accommodations?|lodging|stays?)/[^/?#]+",
+    "text_pattern": "\\bsleeps\\b|\\b\\d+\\s*(bedrooms?|br|beds?)\\b|\\b\\d+(\\.\\d)?\\s*(bathrooms?|baths?|ba)\\b|\\bmax(imum)? guests?\\b",
+    "max_property_links": 12,
+    "_about": "A single-property page: URL looks like a property, text mentions sleeps/bedrooms/bathrooms, and it does not list more than 12 other properties (category and search pages do)."
+  }
+}

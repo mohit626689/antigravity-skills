@@ -1,0 +1,75 @@
+{
+  "_about": "Engine settings for the acq client-acquisition skills. Edit by hand. Nothing here is changed by the engine.",
+
+  "data_dir": "/Users/shivpratap/Desktop/AI Skills/Client Acquisition",
+
+  "_sending_enabled": "Human switch. Live email sending is refused while this is false, even for approved drafts.",
+  "sending_enabled": false,
+
+  "sender_name": "Shiv Pratap",
+  "business_name": "ShivWorks",
+
+  "_env_files": "Read-only. First file that defines a key wins; real environment variables win over files. Keys used: GOOGLE_PLACES_API_KEY, GMAIL_USER, GMAIL_APP_PASSWORD, POSTAL_ADDRESS.",
+  "env_files": [
+    "/Users/shivpratap/Desktop/AI Skills/Client Acquisition/.env",
+    "/Users/shivpratap/Desktop/AI Skills/GEO/.env"
+  ],
+
+  "_own_domains": "Your own sites. Always suppressed so they never count as prospects.",
+  "own_domains": ["shivworks.lovable.app"],
+
+  "geo": {
+    "_about": "Existing GEO pipeline. acq only READS these files; it never writes to them.",
+    "ledger": "/Users/shivpratap/Desktop/Shiv Second Brain/outreach_send_ledger.jsonl",
+    "audit_index": "/Users/shivpratap/Desktop/Shiv Second Brain/Audits/audit-index.json",
+    "places_usage": "/Users/shivpratap/Desktop/AI Skills/GEO/places_usage.json",
+    "sheet_id": "19NOTZA-ChXt8b7i6dw1i5oNul43c_IJSH3ki-hNaNRM",
+    "service_account": "/Users/shivpratap/Desktop/AI Skills/GEO/service_account.json",
+    "default_country": "US"
+  },
+
+  "_places_monthly_limit_combined": "GEO + acq Places Text Search requests per calendar month. Kept under Google's free allowance; verify current pricing before raising.",
+  "places_monthly_limit_combined": 900,
+
+  "http": {
+    "timeout_seconds": 20,
+    "max_bytes": 3000000,
+    "delay_seconds": 1.0,
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+  },
+
+  "attachment_max_mb": 15,
+
+  "_sheets": "One Google Sheet per playbook, never the GEO sheet. Create an empty sheet, share it with sheet-manager@geo-client-finder.iam.gserviceaccount.com as Editor, paste its link as sheet_id. A local CSV copy is always written to <data_dir>/exports/.",
+  "sheets": {
+    "str-listing-upgrade": {"sheet_id": "", "tab": "Clients"}
+  },
+  "gspread_python": "/Users/shivpratap/.gemini/config/skills/geo/.venv/bin/python3",
+
+  "_baseline_paths": "Files that must stay byte-identical (GEO protection). Data folders that GEO itself updates are excluded.",
+  "baseline_paths": [
+    "/Users/shivpratap/.gemini/config/skills/geo",
+    "/Users/shivpratap/.gemini/config/skills/geo-audit",
+    "/Users/shivpratap/.gemini/config/skills/geo-audit-sheet",
+    "/Users/shivpratap/.gemini/config/skills/geo-brand-mentions",
+    "/Users/shivpratap/.gemini/config/skills/geo-citability",
+    "/Users/shivpratap/.gemini/config/skills/geo-client",
+    "/Users/shivpratap/.gemini/config/skills/geo-compare",
+    "/Users/shivpratap/.gemini/config/skills/geo-content",
+    "/Users/shivpratap/.gemini/config/skills/geo-crawlers",
+    "/Users/shivpratap/.gemini/config/skills/geo-llmstxt",
+    "/Users/shivpratap/.gemini/config/skills/geo-message",
+    "/Users/shivpratap/.gemini/config/skills/geo-outreach",
+    "/Users/shivpratap/.gemini/config/skills/geo-platform-optimizer",
+    "/Users/shivpratap/.gemini/config/skills/geo-proposal",
+    "/Users/shivpratap/.gemini/config/skills/geo-prospect",
+    "/Users/shivpratap/.gemini/config/skills/geo-report",
+    "/Users/shivpratap/.gemini/config/skills/geo-report-pdf",
+    "/Users/shivpratap/.gemini/config/skills/geo-schema",
+    "/Users/shivpratap/.gemini/config/skills/geo-technical",
+    "/Users/shivpratap/.gemini/config/skills/geo-update",
+    "/Users/shivpratap/Desktop/AI Skills/GEO",
+    "/Users/shivpratap/Desktop/Shiv Second Brain/scripts"
+  ],
+  "baseline_exclude": [".venv", "__pycache__", ".DS_Store", "CLIENTS", "_backup_pre_audit_fix", ".env", "places_usage.json", "service_account.json", ".pytest_cache", "webapp/node_modules"]
+}

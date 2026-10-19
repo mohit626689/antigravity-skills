@@ -1,0 +1,94 @@
+{
+  "id": "listing-video",
+  "name": "Property video for photo-only rental sites",
+  "version": 1,
+
+  "offer": {
+    "title": "Short walkthrough video made from your existing property photos",
+    "summary": "A short video built from the photos already on your website, for listing pages, Reels and ads.",
+    "paid_next_step": "A video for every property, or a filmed walkthrough on site.",
+    "deliverable": "Private MP4 sample (unlisted link or attachment)"
+  },
+
+  "target": {
+    "description": "Vacation-rental hosts and short-term-rental managers who run their OWN booking website (not Airbnb listings: scraping and off-platform messaging break Airbnb's rules).",
+    "countries": ["US"],
+    "default_country": "US"
+  },
+
+  "discovery": {
+    "source": "google_places",
+    "queries": ["vacation rental", "cabin rentals", "short term rental management", "vacation rental management company"],
+    "filters": {
+      "require_website": true,
+      "reviews_min": 10,
+      "exclude_name_pattern": "airbnb|vrbo|marriott|hilton|hyatt|wyndham|holiday inn|best western|motel 6|la quinta|comfort inn"
+    }
+  },
+
+  "crawl": {
+    "max_pages": 6,
+    "page_keywords": "propert|rental|cabin|villa|condo|home|stay|unit|gallery|photo|tour|book|contact|about"
+  },
+
+  "checks": [
+    {
+      "id": "many_photos",
+      "label": "Property photos on the site",
+      "type": "count",
+      "source": "images",
+      "min": 8,
+      "exclude_pattern": "logo|icon|favicon|sprite|badge|avatar|\\.svg"
+    },
+    {
+      "id": "no_video",
+      "label": "Embedded video or virtual tour",
+      "type": "element",
+      "match": [
+        {"tag": "video"},
+        {"tag": "iframe", "attr": "src", "pattern": "youtube|youtu\\.be|vimeo|wistia|loom|vidyard|matterport|kuula|cloudpano|tiktok"},
+        {"tag": "meta", "attr": "property", "pattern": "^og:video"}
+      ],
+      "hit_if": "absent",
+      "problem": "Property pages show photos but no video or virtual tour"
+    },
+    {
+      "id": "no_video_link",
+      "label": "Link to a video (YouTube/Vimeo/TikTok)",
+      "type": "link",
+      "pattern": "youtube\\.com/(watch|shorts|embed)|youtu\\.be/|vimeo\\.com/\\d|tiktok\\.com/@[^/]+/video",
+      "hit_if": "absent"
+    },
+    {
+      "id": "runs_ads",
+      "label": "Active ads in the Meta Ad Library",
+      "type": "manual",
+      "instructions": "Open https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&q=<business name> in the browser. If this business has active ads, record --hit yes with that Ad Library URL as --source-url. Running ads suggests a marketing budget. It is a signal, not proof they will pay."
+    }
+  ],
+
+  "qualify": {
+    "all_of": ["many_photos", "no_video", "no_video_link"],
+    "signals": ["runs_ads"]
+  },
+
+  "hypotheses": [
+    "A short video may help listing pages and social posts hold attention. This was not measured for this business."
+  ],
+
+  "sample": {
+    "type": "video",
+    "required": true,
+    "label": "Sample made from photos published on your website. Not posted anywhere; yours to keep or ignore.",
+    "instructions": "Use 6-10 images from the brief's downloaded assets (run `acq sample prepare ... --download-images 10`). Build a 20-30 second 9:16 slideshow with gentle pans, the business name, and a small 'Sample' mark, using the local HyperFrames skills (/slideshow or /general-video), rendered to MP4 under 15 MB. Only use music you are licensed to use, or none. Add no text that is not on their site (no prices, ratings or amenities you did not see)."
+  },
+
+  "message": {
+    "channels": ["email", "contact_form", "instagram", "facebook"],
+    "max_words": 120,
+    "followup_max_words": 60,
+    "allowed_numbers": [],
+    "forbidden_phrases": ["more bookings guaranteed", "increase bookings by", "boost bookings"],
+    "guidance": "Say what you noticed (photos, no video on the pages you checked), that you made a short sample from their own photos, link it, and ask one small question (would a version for each property be useful?). No pressure, no claims about bookings or revenue."
+  }
+}

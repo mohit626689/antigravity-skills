@@ -1,0 +1,10 @@
+*.pdf
+*.json
+!scripts/*.json
+__pycache__/
+*.pyc
+.DS_Store
+node_modules/
+/trade_data.json
+/TRADE-*.md
+/TRADE-*.pdf

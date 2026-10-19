@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="900" y2="320">
+      <stop offset="0%" stop-color="#1a0e0c"/>
+      <stop offset="100%" stop-color="#2c1612"/>
+    </linearGradient>
+    <linearGradient id="redOrange" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e74c3c"/>
+      <stop offset="100%" stop-color="#f39c12"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="320" rx="12" fill="url(#bg)"/>
+
+  <!-- Left column: Title + info -->
+
+  <!-- Red accent bar -->
+  <rect x="45" y="35" width="4" height="70" rx="2" fill="#e74c3c"/>
+
+  <!-- Main title -->
+  <text x="62" y="68" font-family="monospace, 'Courier New'" font-size="38" font-weight="bold" fill="#e74c3c" letter-spacing="2">AI RESTAURANT</text>
+  <text x="62" y="100" font-family="monospace, 'Courier New'" font-size="22" fill="#f39c12" letter-spacing="4">TEAM</text>
+
+  <!-- Divider -->
+  <rect x="62" y="115" width="220" height="2" rx="1" fill="url(#redOrange)" opacity="0.6"/>
+
+  <!-- Tagline -->
+  <text x="62" y="140" font-family="monospace, 'Courier New'" font-size="12" fill="#a89884">Restaurant Marketing &amp; Operations Audit</text>
+  <text x="62" y="158" font-family="monospace, 'Courier New'" font-size="12" fill="#a89884">for Claude Code</text>
+
+  <!-- Stats row -->
+  <g font-family="monospace, 'Courier New'" font-size="11" font-weight="bold">
+    <rect x="62" y="175" width="80" height="24" rx="4" fill="#2c1612" stroke="#e74c3c" stroke-width="1"/>
+    <text x="102" y="191" fill="#e74c3c" text-anchor="middle">14 Skills</text>
+
+    <rect x="152" y="175" width="80" height="24" rx="4" fill="#2c1612" stroke="#e74c3c" stroke-width="1"/>
+    <text x="192" y="191" fill="#e74c3c" text-anchor="middle">5 Agents</text>
+
+    <rect x="242" y="175" width="100" height="24" rx="4" fill="#2c1612" stroke="#27ae60" stroke-width="1"/>
+    <text x="292" y="191" fill="#27ae60" text-anchor="middle">PDF Reports</text>
+  </g>
+
+  <!-- Right column: Feature list -->
+  <g font-family="monospace, 'Courier New'" font-size="12">
+    <text x="470" y="55" fill="#f39c12">▸</text><text x="490" y="55" fill="#d8c8b4">Reviews &amp; Reputation</text>
+    <text x="470" y="80" fill="#f39c12">▸</text><text x="490" y="80" fill="#d8c8b4">Menu Engineering (Kasavana)</text>
+    <text x="470" y="105" fill="#f39c12">▸</text><text x="490" y="105" fill="#d8c8b4">Local SEO &amp; GBP</text>
+    <text x="470" y="130" fill="#f39c12">▸</text><text x="490" y="130" fill="#d8c8b4">Social Media Calendars</text>
+    <text x="470" y="155" fill="#f39c12">▸</text><text x="490" y="155" fill="#d8c8b4">Competitor Analysis</text>
+    <text x="470" y="180" fill="#f39c12">▸</text><text x="490" y="180" fill="#d8c8b4">Email &amp; SMS Sequences</text>
+  </g>
+
+  <!-- Vertical divider between columns -->
+  <line x1="440" y1="40" x2="440" y2="200" stroke="#3d2520" stroke-width="1"/>
+
+  <!-- Commands section -->
+  <rect x="0" y="215" width="900" height="1" fill="#3d2520" opacity="0.6"/>
+
+  <g font-family="monospace, 'Courier New'" font-size="12">
+    <text x="62" y="245">
+      <tspan fill="#27ae60">/restaurant audit</tspan><tspan fill="#5a4540"> full audit (5 agents)</tspan>
+    </text>
+    <text x="340" y="245">
+      <tspan fill="#27ae60">/restaurant menu</tspan><tspan fill="#5a4540"> Kasavana matrix</tspan>
+    </text>
+    <text x="590" y="245">
+      <tspan fill="#27ae60">/restaurant reviews</tspan><tspan fill="#5a4540"> sentiment</tspan>
+    </text>
+    <text x="62" y="270">
+      <tspan fill="#27ae60">/restaurant social</tspan><tspan fill="#5a4540"> 30-day calendar</tspan>
+    </text>
+    <text x="340" y="270">
+      <tspan fill="#27ae60">/restaurant ads</tspan><tspan fill="#5a4540"> Meta ad copy</tspan>
+    </text>
+    <text x="590" y="270">
+      <tspan fill="#27ae60">/restaurant report-pdf</tspan><tspan fill="#5a4540"> PDF</tspan>
+    </text>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="290" width="900" height="30" rx="0" fill="#0e0805"/>
+  <text x="450" y="310" font-family="monospace, 'Courier New'" font-size="11" fill="#5a4540" text-anchor="middle" letter-spacing="1">
+    QSR  ·  casual  ·  fine dining  ·  cafe  ·  pizza  ·  bar &amp; brewery  ·  for Claude Code
+  </text>
+</svg>

@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a3d3d"/>
+      <stop offset="100%" style="stop-color:#0d4f4f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2dd4a8"/>
+      <stop offset="100%" style="stop-color:#14b8a6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="400" fill="url(#bg)" rx="12"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.04" stroke="#2dd4a8" stroke-width="1">
+    <line x1="0" y1="50" x2="900" y2="50"/>
+    <line x1="0" y1="100" x2="900" y2="100"/>
+    <line x1="0" y1="150" x2="900" y2="150"/>
+    <line x1="0" y1="200" x2="900" y2="200"/>
+    <line x1="0" y1="250" x2="900" y2="250"/>
+    <line x1="0" y1="300" x2="900" y2="300"/>
+    <line x1="0" y1="350" x2="900" y2="350"/>
+    <line x1="150" y1="0" x2="150" y2="400"/>
+    <line x1="300" y1="0" x2="300" y2="400"/>
+    <line x1="450" y1="0" x2="450" y2="400"/>
+    <line x1="600" y1="0" x2="600" y2="400"/>
+    <line x1="750" y1="0" x2="750" y2="400"/>
+  </g>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="900" height="3" fill="url(#accent)" rx="1"/>
+
+  <!-- ASCII-art style REPUTATION text (left side) -->
+  <text x="40" y="68" font-family="'Courier New', monospace" font-size="11" fill="#2dd4a8" font-weight="bold" opacity="0.9">
+    <tspan x="40" dy="0"> ____  _____ ____  _   _ _____  _  _____ ___ ___  _   _</tspan>
+    <tspan x="40" dy="14">|  _ \| ____|  _ \| | | |_   _|/ \|_   _|_ _/ _ \| \ | |</tspan>
+    <tspan x="40" dy="14">| |_) |  _| | |_) | | | | | | / _ \ | |  | | | | |  \| |</tspan>
+    <tspan x="40" dy="14">|  _ &lt;| |___|  __/| |_| | | |/ ___ \| |  | | |_| | |\  |</tspan>
+    <tspan x="40" dy="14">|_| \_\_____|_|    \___/  |_/_/   \_\_| |___\___/|_| \_|</tspan>
+  </text>
+
+  <!-- Subtitle -->
+  <text x="40" y="162" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#94a3b8" letter-spacing="0.5">
+    AI-Powered Reputation Management for Claude Code
+  </text>
+
+  <!-- Divider line -->
+  <rect x="40" y="178" width="360" height="1" fill="#2dd4a8" opacity="0.3"/>
+
+  <!-- Command list (right side) -->
+  <text font-family="'Courier New', monospace" font-size="11.5" fill="#e2e8f0">
+    <tspan x="480" y="55" fill="#2dd4a8">/reputation</tspan><tspan fill="#64748b"> &lt;business&gt;</tspan><tspan fill="#475569">  Full audit</tspan>
+    <tspan x="480" dy="19" fill="#2dd4a8">/reputation reviews</tspan><tspan fill="#475569">    Review analysis</tspan>
+    <tspan x="480" dy="19" fill="#2dd4a8">/reputation sentiment</tspan><tspan fill="#475569">  Sentiment</tspan>
+    <tspan x="480" dy="19" fill="#2dd4a8">/reputation trends</tspan><tspan fill="#475569">     Trajectory</tspan>
+    <tspan x="480" dy="19" fill="#2dd4a8">/reputation competitors</tspan><tspan fill="#475569"> Benchmarking</tspan>
+    <tspan x="480" dy="19" fill="#2dd4a8">/reputation respond</tspan><tspan fill="#475569">    Responses</tspan>
+    <tspan x="480" dy="19" fill="#2dd4a8">/reputation crisis</tspan><tspan fill="#475569">     Crisis plan</tspan>
+    <tspan x="480" dy="19" fill="#2dd4a8">/reputation recover</tspan><tspan fill="#475569">    Recovery</tspan>
+    <tspan x="480" dy="19" fill="#2dd4a8">/reputation request</tspan><tspan fill="#475569">    Campaigns</tspan>
+    <tspan x="480" dy="19" fill="#2dd4a8">/reputation alerts</tspan><tspan fill="#475569">     Monitoring</tspan>
+    <tspan x="480" dy="19" fill="#2dd4a8">/reputation social</tspan><tspan fill="#475569">     Social scan</tspan>
+    <tspan x="480" dy="19" fill="#2dd4a8">/reputation seo</tspan><tspan fill="#475569">        SEO strategy</tspan>
+    <tspan x="480" dy="19" fill="#2dd4a8">/reputation quick</tspan><tspan fill="#475569">      Scorecard</tspan>
+    <tspan x="480" dy="19" fill="#2dd4a8">/reputation report-pdf</tspan><tspan fill="#475569"> PDF report</tspan>
+  </text>
+
+  <!-- Star rating decoration -->
+  <text x="40" y="210" font-family="'Segoe UI', Arial, sans-serif" font-size="22" fill="#2dd4a8" opacity="0.8">
+    &#9733; &#9733; &#9733; &#9733; &#9733;
+  </text>
+  <text x="168" y="210" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#64748b">
+    Protect your online reputation
+  </text>
+
+  <!-- Feature boxes -->
+  <g transform="translate(40, 235)">
+    <rect width="120" height="50" rx="6" fill="#0f5e5e" stroke="#2dd4a8" stroke-width="1" opacity="0.6"/>
+    <text x="60" y="22" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#2dd4a8" text-anchor="middle" font-weight="bold">14</text>
+    <text x="60" y="40" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Skills</text>
+  </g>
+  <g transform="translate(180, 235)">
+    <rect width="120" height="50" rx="6" fill="#0f5e5e" stroke="#2dd4a8" stroke-width="1" opacity="0.6"/>
+    <text x="60" y="22" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#2dd4a8" text-anchor="middle" font-weight="bold">5</text>
+    <text x="60" y="40" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Parallel Agents</text>
+  </g>
+  <g transform="translate(320, 235)">
+    <rect width="120" height="50" rx="6" fill="#0f5e5e" stroke="#2dd4a8" stroke-width="1" opacity="0.6"/>
+    <text x="60" y="22" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#2dd4a8" text-anchor="middle" font-weight="bold">PDF</text>
+    <text x="60" y="40" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Reports</text>
+  </g>
+
+  <!-- Install command -->
+  <g transform="translate(40, 310)">
+    <rect width="400" height="36" rx="6" fill="#0c2d2d" stroke="#1a4a4a" stroke-width="1"/>
+    <text x="12" y="23" font-family="'Courier New', monospace" font-size="12" fill="#64748b">$</text>
+    <text x="28" y="23" font-family="'Courier New', monospace" font-size="12" fill="#e2e8f0">curl -fsSL .../install.sh | bash</text>
+  </g>
+
+  <!-- Bottom footer -->
+  <rect x="0" y="370" width="900" height="30" fill="#082e2e" rx="0"/>
+  <text x="450" y="390" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle" letter-spacing="1.5">
+    14 skills  ·  5 parallel agents  ·  PDF reports
+  </text>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="397" width="900" height="3" fill="url(#accent)" rx="1"/>
+</svg>
